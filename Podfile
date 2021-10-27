@@ -12,5 +12,6 @@ target 'ChatRoomMsgViewDemo' do
   pod 'Masonry', '~> 1.1.0'
   pod 'SDWebImage', '~> 4.3.3'
   pod 'YYImage'
+  pod 'SPPageMenu', '~> 3.4.5'
   
 end
