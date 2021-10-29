@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TXVoiceRoomGiftItemCell">
+            <rect key="frame" x="0.0" y="0.0" width="99" height="211"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="99" height="211"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift_003_icon" translatesAutoresizingMaskIntoConstraints="NO" id="QsV-nq-rJd">
+                        <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="QsV-nq-rJd" secondAttribute="height" multiplier="1:1" id="LTA-Nq-1x4"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="礼物名字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqG-9n-UBM">
+                        <rect key="frame" x="0.0" y="100" width="99" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8I-D5-APJ">
+                        <rect key="frame" x="10" y="114" width="79" height="14"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="LLc-s4-qQy"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift_lucy_tib_icon" translatesAutoresizingMaskIntoConstraints="NO" id="fD4-W0-bv3">
+                        <rect key="frame" x="-11" y="0.0" width="32" height="32"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <constraints>
+                <constraint firstItem="fD4-W0-bv3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1zC-5P-qV5"/>
+                <constraint firstAttribute="trailing" secondItem="WqG-9n-UBM" secondAttribute="trailing" id="5MY-hq-2SU"/>
+                <constraint firstItem="QsV-nq-rJd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="66b-78-rTe"/>
+                <constraint firstItem="QsV-nq-rJd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OmS-xR-Dx1"/>
+                <constraint firstItem="WqG-9n-UBM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PvH-Rd-e6n"/>
+                <constraint firstItem="G8I-D5-APJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Vsu-92-Gi9"/>
+                <constraint firstItem="WqG-9n-UBM" firstAttribute="top" secondItem="QsV-nq-rJd" secondAttribute="bottom" constant="1" id="ZGJ-01-Iav"/>
+                <constraint firstItem="G8I-D5-APJ" firstAttribute="top" secondItem="WqG-9n-UBM" secondAttribute="bottom" constant="2" id="d6Q-wE-ctp"/>
+                <constraint firstAttribute="trailing" secondItem="G8I-D5-APJ" secondAttribute="trailing" constant="10" id="flY-Vf-hvS"/>
+                <constraint firstAttribute="trailing" secondItem="QsV-nq-rJd" secondAttribute="trailing" id="kqE-bp-0me"/>
+                <constraint firstItem="fD4-W0-bv3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="-11" id="nEc-Ij-Jex"/>
+            </constraints>
+            <size key="customSize" width="99" height="211"/>
+            <connections>
+                <outlet property="giftImageView" destination="QsV-nq-rJd" id="vxk-Dk-uGv"/>
+                <outlet property="giftNameLab" destination="WqG-9n-UBM" id="RpX-Md-8pu"/>
+                <outlet property="lucyTipImageView" destination="fD4-W0-bv3" id="fex-du-6dl"/>
+            </connections>
+            <point key="canvasLocation" x="170.28985507246378" y="146.31696428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="gift_003_icon" width="54" height="54"/>
+        <image name="gift_lucy_tib_icon" width="32" height="32"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

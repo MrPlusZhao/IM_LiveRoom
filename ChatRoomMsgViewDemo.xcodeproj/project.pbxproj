@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47056567272BCC2A00174841 /* TXVoiceRoomGiftPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47056566272BCC2A00174841 /* TXVoiceRoomGiftPageView.m */; };
+		4705656A272BD36E00174841 /* TXVoiceRoomGiftListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47056569272BD36E00174841 /* TXVoiceRoomGiftListView.m */; };
+		4705656D272BD80800174841 /* TXVoiceRoomGiftBaseListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4705656C272BD80800174841 /* TXVoiceRoomGiftBaseListView.m */; };
+		47056570272BE91D00174841 /* TXVoiceRoomGiftUserListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4705656F272BE91D00174841 /* TXVoiceRoomGiftUserListView.m */; };
+		47056573272BE9AC00174841 /* TXVoiceRoomGiftPowerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47056572272BE9AC00174841 /* TXVoiceRoomGiftPowerView.m */; };
+		47056577272BEE9F00174841 /* TXVoiceRoomGiftItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47056575272BEE9F00174841 /* TXVoiceRoomGiftItemCell.m */; };
+		47056578272BEE9F00174841 /* TXVoiceRoomGiftItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47056576272BEE9F00174841 /* TXVoiceRoomGiftItemCell.xib */; };
 		470F07CA27225E1A00829BDA /* TIMKeyboardToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F07C927225E1A00829BDA /* TIMKeyboardToolBarView.m */; };
 		470F07CC27225E5100829BDA /* TIMKeyboardToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 470F07CB27225E5100829BDA /* TIMKeyboardToolBarView.xib */; };
 		470F07D62722AB2E00829BDA /* TipCollectionItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F07D42722AB2E00829BDA /* TipCollectionItemCell.m */; };
@@ -31,6 +38,19 @@
 
 /* Begin PBXFileReference section */
 		3725D9A02EDEEDDEE1383F3B /* Pods_ChatRoomMsgViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatRoomMsgViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47056565272BCC2A00174841 /* TXVoiceRoomGiftPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXVoiceRoomGiftPageView.h; sourceTree = "<group>"; };
+		47056566272BCC2A00174841 /* TXVoiceRoomGiftPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXVoiceRoomGiftPageView.m; sourceTree = "<group>"; };
+		47056568272BD36E00174841 /* TXVoiceRoomGiftListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXVoiceRoomGiftListView.h; sourceTree = "<group>"; };
+		47056569272BD36E00174841 /* TXVoiceRoomGiftListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXVoiceRoomGiftListView.m; sourceTree = "<group>"; };
+		4705656B272BD80800174841 /* TXVoiceRoomGiftBaseListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXVoiceRoomGiftBaseListView.h; sourceTree = "<group>"; };
+		4705656C272BD80800174841 /* TXVoiceRoomGiftBaseListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXVoiceRoomGiftBaseListView.m; sourceTree = "<group>"; };
+		4705656E272BE91D00174841 /* TXVoiceRoomGiftUserListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXVoiceRoomGiftUserListView.h; sourceTree = "<group>"; };
+		4705656F272BE91D00174841 /* TXVoiceRoomGiftUserListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXVoiceRoomGiftUserListView.m; sourceTree = "<group>"; };
+		47056571272BE9AC00174841 /* TXVoiceRoomGiftPowerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXVoiceRoomGiftPowerView.h; sourceTree = "<group>"; };
+		47056572272BE9AC00174841 /* TXVoiceRoomGiftPowerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXVoiceRoomGiftPowerView.m; sourceTree = "<group>"; };
+		47056574272BEE9F00174841 /* TXVoiceRoomGiftItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXVoiceRoomGiftItemCell.h; sourceTree = "<group>"; };
+		47056575272BEE9F00174841 /* TXVoiceRoomGiftItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXVoiceRoomGiftItemCell.m; sourceTree = "<group>"; };
+		47056576272BEE9F00174841 /* TXVoiceRoomGiftItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TXVoiceRoomGiftItemCell.xib; sourceTree = "<group>"; };
 		470F07C827225E1A00829BDA /* TIMKeyboardToolBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIMKeyboardToolBarView.h; sourceTree = "<group>"; };
 		470F07C927225E1A00829BDA /* TIMKeyboardToolBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIMKeyboardToolBarView.m; sourceTree = "<group>"; };
 		470F07CB27225E5100829BDA /* TIMKeyboardToolBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TIMKeyboardToolBarView.xib; sourceTree = "<group>"; };
@@ -90,6 +110,42 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		47056563272BCBDC00174841 /* TXVoiceRoomGiftPageView */ = {
+			isa = PBXGroup;
+			children = (
+				47056579272BEEBB00174841 /* CollectionViewCell */,
+				47056565272BCC2A00174841 /* TXVoiceRoomGiftPageView.h */,
+				47056566272BCC2A00174841 /* TXVoiceRoomGiftPageView.m */,
+				47056568272BD36E00174841 /* TXVoiceRoomGiftListView.h */,
+				47056569272BD36E00174841 /* TXVoiceRoomGiftListView.m */,
+				4705656B272BD80800174841 /* TXVoiceRoomGiftBaseListView.h */,
+				4705656C272BD80800174841 /* TXVoiceRoomGiftBaseListView.m */,
+				4705656E272BE91D00174841 /* TXVoiceRoomGiftUserListView.h */,
+				4705656F272BE91D00174841 /* TXVoiceRoomGiftUserListView.m */,
+				47056571272BE9AC00174841 /* TXVoiceRoomGiftPowerView.h */,
+				47056572272BE9AC00174841 /* TXVoiceRoomGiftPowerView.m */,
+				47056564272BCC1B00174841 /* View */,
+			);
+			path = TXVoiceRoomGiftPageView;
+			sourceTree = "<group>";
+		};
+		47056564272BCC1B00174841 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47056579272BEEBB00174841 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				47056574272BEE9F00174841 /* TXVoiceRoomGiftItemCell.h */,
+				47056575272BEE9F00174841 /* TXVoiceRoomGiftItemCell.m */,
+				47056576272BEE9F00174841 /* TXVoiceRoomGiftItemCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		470F07D12722A7A500829BDA /* KeyboardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +192,7 @@
 				474E58A427181D3D001C5E82 /* AppDelegate.m */,
 				474E58A927181D3D001C5E82 /* ViewController.h */,
 				474E58AA27181D3D001C5E82 /* ViewController.m */,
+				47056563272BCBDC00174841 /* TXVoiceRoomGiftPageView */,
 				474E58C5271824A4001C5E82 /* TXVoiceRoomChatListView */,
 				474E58AC27181D3D001C5E82 /* Main.storyboard */,
 				474E58AF27181D3F001C5E82 /* Assets.xcassets */,
@@ -270,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47056578272BEE9F00174841 /* TXVoiceRoomGiftItemCell.xib in Resources */,
 				470F07CC27225E5100829BDA /* TIMKeyboardToolBarView.xib in Resources */,
 				474E58B327181D3F001C5E82 /* LaunchScreen.storyboard in Resources */,
 				470F07D72722AB2E00829BDA /* TipCollectionItemCell.xib in Resources */,
@@ -327,14 +385,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47056577272BEE9F00174841 /* TXVoiceRoomGiftItemCell.m in Sources */,
+				47056567272BCC2A00174841 /* TXVoiceRoomGiftPageView.m in Sources */,
 				475532CE27198BB9002A05C3 /* UIView+Frame.m in Sources */,
+				4705656D272BD80800174841 /* TXVoiceRoomGiftBaseListView.m in Sources */,
 				474E58AB27181D3D001C5E82 /* ViewController.m in Sources */,
 				470F07D62722AB2E00829BDA /* TipCollectionItemCell.m in Sources */,
+				4705656A272BD36E00174841 /* TXVoiceRoomGiftListView.m in Sources */,
+				47056573272BE9AC00174841 /* TXVoiceRoomGiftPowerView.m in Sources */,
 				470F07CA27225E1A00829BDA /* TIMKeyboardToolBarView.m in Sources */,
 				474E58A527181D3D001C5E82 /* AppDelegate.m in Sources */,
 				4787C1142719719700D13E02 /* TPImageManager.m in Sources */,
 				474E58D2271831EF001C5E82 /* TXVoiceRoomMsgBaseCell.m in Sources */,
 				4787C104271964B700D13E02 /* VoiceRoomMsgCommentCell.m in Sources */,
+				47056570272BE91D00174841 /* TXVoiceRoomGiftUserListView.m in Sources */,
 				474E58B627181D3F001C5E82 /* main.m in Sources */,
 				4787C10D2719687D00D13E02 /* VoiceRoomChatGiftModel.m in Sources */,
 				4787C1102719693E00D13E02 /* VoiceRoomChatMsgModel.m in Sources */,

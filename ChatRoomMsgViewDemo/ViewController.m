@@ -9,11 +9,13 @@
 #import "TXVoiceRoomChatListView.h"
 #import "UIView+Frame.h"
 #import "TPImageManager.h"
+#import "TXVoiceRoomGiftPageView.h"
 
 #define MsgTableViewTop       300
 #define MsgTableViewWidth     288
 #define MsgTableViewHeight    300
 #define ToolBarHeight         95
+#define BOM_HEIGHT 340
 
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
@@ -21,6 +23,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) TXVoiceRoomChatListView *chatListView;
+@property (nonatomic, strong) TXVoiceRoomGiftPageView *giftPageView;
 
 @end
 
@@ -32,6 +35,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = RGBAOF(0x461979, 1.0);
     [self.view addSubview:self.chatListView];
+    [self.view addSubview:self.giftPageView];
 }
 
 - (TXVoiceRoomChatListView *)chatListView{
@@ -41,10 +45,19 @@
     }
     return _chatListView;
 }
-
+- (TXVoiceRoomGiftPageView *)giftPageView{
+    if (!_giftPageView) {
+        _giftPageView = [[TXVoiceRoomGiftPageView alloc] init];
+        _giftPageView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, BOM_HEIGHT);
+    }
+    return _giftPageView;
+}
 /// 开始输入消息
 - (IBAction)inputAction:(id)sender {
     [self.chatListView.toolBar show];
+}
+- (IBAction)giftAction:(id)sender {
+    [self.giftPageView show];
 }
 
 /// 清除消息

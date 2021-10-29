@@ -48,10 +48,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQY-4W-wUs">
-                                <rect key="frame" x="164.66666666666666" y="649" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="122" y="649" width="31" height="30"/>
+                                <state key="normal" title="发言"/>
                                 <connections>
                                     <action selector="inputAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="drU-TQ-rIX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3C-Sg-MjJ">
+                                <rect key="frame" x="233" y="649" width="62" height="30"/>
+                                <state key="normal" title="礼物选择"/>
+                                <connections>
+                                    <action selector="giftAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CD8-Il-ZoU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,8 +72,11 @@
                             <constraint firstItem="kIP-Zr-hAV" firstAttribute="top" secondItem="mQY-4W-wUs" secondAttribute="bottom" constant="19" id="VEE-Jg-emK"/>
                             <constraint firstItem="kIP-Zr-hAV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AAT-5k-89O" secondAttribute="trailing" constant="8" symbolic="YES" id="Xwj-2s-Lxw"/>
                             <constraint firstItem="AAT-5k-89O" firstAttribute="centerY" secondItem="kIP-Zr-hAV" secondAttribute="centerY" id="Yk4-J1-fgF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C3C-Sg-MjJ" secondAttribute="trailing" constant="80" id="ZoV-pb-a0C"/>
+                            <constraint firstItem="C3C-Sg-MjJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mQY-4W-wUs" secondAttribute="trailing" symbolic="YES" id="bYU-Cv-B6y"/>
                             <constraint firstItem="AAT-5k-89O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="ePi-RL-NWu"/>
-                            <constraint firstItem="mQY-4W-wUs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nTF-WJ-iGK"/>
+                            <constraint firstItem="mQY-4W-wUs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-50" id="nTF-WJ-iGK"/>
+                            <constraint firstItem="C3C-Sg-MjJ" firstAttribute="centerY" secondItem="mQY-4W-wUs" secondAttribute="centerY" id="o1c-gW-SdM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kIP-Zr-hAV" secondAttribute="bottom" constant="50" id="rRA-fZ-IHs"/>
                         </constraints>
                     </view>
