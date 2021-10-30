@@ -15,7 +15,16 @@
 #define MsgTableViewWidth     288
 #define MsgTableViewHeight    300
 #define ToolBarHeight         95
-#define BOM_HEIGHT 340
+//#define BOM_HEIGHT 340 ((SCREEN_WIDTH/5)+30)*2
+
+#define UserListViewHeight 50
+#define PageMenu_Height 40
+#define giftListHeight (((SCREEN_WIDTH/5)+30)*2)
+#define ProgressHeight 25
+//#define BOM_HEIGHT 340
+#define BOM_HEIGHT ((UserListViewHeight+PageMenu_Height+giftListHeight+ProgressHeight)+100)
+
+//#define BOM_HEIGHT 340 ((SCREEN_WIDTH/5)+30)*2
 
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
@@ -34,8 +43,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = RGBAOF(0x461979, 1.0);
-    [self.view addSubview:self.chatListView];
+//    [self.view addSubview:self.chatListView];
     [self.view addSubview:self.giftPageView];
+    [self.giftPageView show];
 }
 
 - (TXVoiceRoomChatListView *)chatListView{

@@ -8,17 +8,20 @@
 #import "TXVoiceRoomGiftBaseListView.h"
 #import "TipCollectionItemCell.h"
 #import "TXVoiceRoomGiftItemCell.h"
+#import "TXVoiceRoomGiftFlowLayout.h"
 
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 
-#define giftListHeight 168
+//#define giftListHeight 168
+#define giftListHeight ((SCREEN_WIDTH/5)+30)*2
 
 @interface TXVoiceRoomGiftBaseListView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) UICollectionViewFlowLayout *collectionLayout;
-@property (nonatomic, assign) NSInteger selectedItemIndex;
+@property (nonatomic, strong) TXVoiceRoomGiftFlowLayout *collectionLayout;
+@property (nonatomic, assign) int selectedItemIndex;
+@property (nonatomic, assign) CGFloat oldY;
 
 @end
 
@@ -41,34 +44,31 @@
 }
 - (UICollectionViewFlowLayout *)collectionLayout{
     if (!_collectionLayout) {
-        _collectionLayout = [[UICollectionViewFlowLayout alloc] init];
-        _collectionLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        _collectionLayout.minimumLineSpacing = 20;
+        _collectionLayout =[[TXVoiceRoomGiftFlowLayout alloc]init];
+        CGFloat WW = SCREEN_WIDTH/5;
+        CGFloat HH = WW + 30;
+        _collectionLayout.itemSize = CGSizeMake(WW, HH);
         _collectionLayout.minimumInteritemSpacing = 0;
+        _collectionLayout.minimumLineSpacing = 0;
+        _collectionLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     }
     return _collectionLayout;
 }
 #pragma mark -- UICollectionViewDelegateFlowLayout
-/** 每个cell的尺寸*/
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    CGFloat WW = (SCREEN_WIDTH - 21*4 - 11*2)/5;
-    CGFloat HH = WW + 30;
-    return CGSizeMake(WW, HH);
-}
 /** section的margin*/
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, 10, 0, 10);
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"点击了第几%ld项目",indexPath.item);
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 50;
-}
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    NSInteger number =(NSInteger)scrollView.contentOffset.x/SCREEN_WIDTH;
-    self.selectedItemIndex = number;
+    NSInteger count = self.dataArr.count;
+//    NSInteger addCount = self.dataArr.count%10;
+//    if (addCount < 10) {
+//        return addCount + count;
+//    }
+    return count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -76,10 +76,8 @@
     if (!cellItem) {
         cellItem = [[NSBundle mainBundle] loadNibNamed:@"TXVoiceRoomGiftItemCell" owner:self options:nil].lastObject;
     }
-    if (indexPath.row <2) {
-        cellItem.lucyTipImageView.hidden = YES;
-    }
-    cellItem.giftImageView.image = [self randomImg];
+    NSString *rr = self.dataArr[indexPath.row];
+    cellItem.giftNameLab.text = rr;
     return cellItem;
 }
 
@@ -91,13 +89,23 @@
 }
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
-        CGFloat WW = (SCREEN_WIDTH - 21*4 - 11*2)/5;
-        CGFloat HH = WW + 30;
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 2*HH) collectionViewLayout:self.collectionLayout];
-        _collectionView.delegate = self;
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, giftListHeight) collectionViewLayout:self.collectionLayout];
+        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        _collectionView.pagingEnabled = YES;
         _collectionView.dataSource = self;
+        _collectionView.delegate = self;
+        _collectionView.showsVerticalScrollIndicator = NO;
+        _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.bounces = NO;
+        _collectionView.pagingEnabled = YES;
+        _collectionView.backgroundColor = [UIColor blackColor];
     }
     return _collectionView;
+}
+- (NSMutableArray *)dataArr{
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
 }
 @end

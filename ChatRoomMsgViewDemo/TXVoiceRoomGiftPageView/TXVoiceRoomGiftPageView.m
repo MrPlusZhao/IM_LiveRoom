@@ -10,15 +10,16 @@
 #import "UIView+Frame.h"
 #import "TXVoiceRoomGiftUserListView.h"
 
-#define BOM_HEIGHT 340
+
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 
 #define UserListViewHeight 50
 #define PageMenu_Height 40
-#define giftListHeight 168
+#define giftListHeight ((SCREEN_WIDTH/5)+30)*2
 #define ProgressHeight 25
-
+//#define BOM_HEIGHT 340
+#define BOM_HEIGHT ((UserListViewHeight+PageMenu_Height+giftListHeight+ProgressHeight)+100)
 @interface TXVoiceRoomGiftPageView ()
 
 /// 键盘上层遮罩

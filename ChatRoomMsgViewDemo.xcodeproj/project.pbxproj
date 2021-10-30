@@ -27,6 +27,7 @@
 		474E58C8271824C3001C5E82 /* TXVoiceRoomChatListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 474E58C7271824C3001C5E82 /* TXVoiceRoomChatListView.m */; };
 		474E58D2271831EF001C5E82 /* TXVoiceRoomMsgBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 474E58D1271831EF001C5E82 /* TXVoiceRoomMsgBaseCell.m */; };
 		475532CE27198BB9002A05C3 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 475532CD27198BB9002A05C3 /* UIView+Frame.m */; };
+		476EE905272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 476EE904272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.m */; };
 		4787C104271964B700D13E02 /* VoiceRoomMsgCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4787C103271964B700D13E02 /* VoiceRoomMsgCommentCell.m */; };
 		4787C107271967D800D13E02 /* VoiceRoomChatUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4787C106271967D800D13E02 /* VoiceRoomChatUserModel.m */; };
 		4787C10A2719682400D13E02 /* VoiceRoomChatAttributeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4787C1092719682400D13E02 /* VoiceRoomChatAttributeModel.m */; };
@@ -73,6 +74,8 @@
 		474E58D1271831EF001C5E82 /* TXVoiceRoomMsgBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXVoiceRoomMsgBaseCell.m; sourceTree = "<group>"; };
 		475532CC27198BB9002A05C3 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		475532CD27198BB9002A05C3 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		476EE903272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXVoiceRoomGiftFlowLayout.h; sourceTree = "<group>"; };
+		476EE904272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXVoiceRoomGiftFlowLayout.m; sourceTree = "<group>"; };
 		4787C102271964B700D13E02 /* VoiceRoomMsgCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceRoomMsgCommentCell.h; sourceTree = "<group>"; };
 		4787C103271964B700D13E02 /* VoiceRoomMsgCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceRoomMsgCommentCell.m; sourceTree = "<group>"; };
 		4787C105271967D800D13E02 /* VoiceRoomChatUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceRoomChatUserModel.h; sourceTree = "<group>"; };
@@ -124,16 +127,8 @@
 				4705656F272BE91D00174841 /* TXVoiceRoomGiftUserListView.m */,
 				47056571272BE9AC00174841 /* TXVoiceRoomGiftPowerView.h */,
 				47056572272BE9AC00174841 /* TXVoiceRoomGiftPowerView.m */,
-				47056564272BCC1B00174841 /* View */,
 			);
 			path = TXVoiceRoomGiftPageView;
-			sourceTree = "<group>";
-		};
-		47056564272BCC1B00174841 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		47056579272BEEBB00174841 /* CollectionViewCell */ = {
@@ -142,6 +137,8 @@
 				47056574272BEE9F00174841 /* TXVoiceRoomGiftItemCell.h */,
 				47056575272BEE9F00174841 /* TXVoiceRoomGiftItemCell.m */,
 				47056576272BEE9F00174841 /* TXVoiceRoomGiftItemCell.xib */,
+				476EE903272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.h */,
+				476EE904272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.m */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -393,6 +390,7 @@
 				470F07D62722AB2E00829BDA /* TipCollectionItemCell.m in Sources */,
 				4705656A272BD36E00174841 /* TXVoiceRoomGiftListView.m in Sources */,
 				47056573272BE9AC00174841 /* TXVoiceRoomGiftPowerView.m in Sources */,
+				476EE905272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.m in Sources */,
 				470F07CA27225E1A00829BDA /* TIMKeyboardToolBarView.m in Sources */,
 				474E58A527181D3D001C5E82 /* AppDelegate.m in Sources */,
 				4787C1142719719700D13E02 /* TPImageManager.m in Sources */,
@@ -549,7 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VKZ5S4BDQY;
+				DEVELOPMENT_TEAM = 2ABN7Z8SG6;
 				INFOPLIST_FILE = ChatRoomMsgViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -569,7 +567,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VKZ5S4BDQY;
+				DEVELOPMENT_TEAM = 2ABN7Z8SG6;
 				INFOPLIST_FILE = ChatRoomMsgViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
