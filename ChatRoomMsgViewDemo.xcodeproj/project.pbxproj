@@ -18,6 +18,7 @@
 		470F07CC27225E5100829BDA /* TIMKeyboardToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 470F07CB27225E5100829BDA /* TIMKeyboardToolBarView.xib */; };
 		470F07D62722AB2E00829BDA /* TipCollectionItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F07D42722AB2E00829BDA /* TipCollectionItemCell.m */; };
 		470F07D72722AB2E00829BDA /* TipCollectionItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 470F07D52722AB2E00829BDA /* TipCollectionItemCell.xib */; };
+		4740AD5A272E6A0700EF5147 /* XHPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4740AD58272E6A0700EF5147 /* XHPageControl.m */; };
 		474E58A527181D3D001C5E82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 474E58A427181D3D001C5E82 /* AppDelegate.m */; };
 		474E58AB27181D3D001C5E82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474E58AA27181D3D001C5E82 /* ViewController.m */; };
 		474E58AE27181D3D001C5E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474E58AC27181D3D001C5E82 /* Main.storyboard */; };
@@ -58,6 +59,8 @@
 		470F07D32722AB2E00829BDA /* TipCollectionItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TipCollectionItemCell.h; sourceTree = "<group>"; };
 		470F07D42722AB2E00829BDA /* TipCollectionItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipCollectionItemCell.m; sourceTree = "<group>"; };
 		470F07D52722AB2E00829BDA /* TipCollectionItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipCollectionItemCell.xib; sourceTree = "<group>"; };
+		4740AD58272E6A0700EF5147 /* XHPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPageControl.m; sourceTree = "<group>"; };
+		4740AD59272E6A0700EF5147 /* XHPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPageControl.h; sourceTree = "<group>"; };
 		474E58A027181D3D001C5E82 /* ChatRoomMsgViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatRoomMsgViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		474E58A327181D3D001C5E82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		474E58A427181D3D001C5E82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 		47056563272BCBDC00174841 /* TXVoiceRoomGiftPageView */ = {
 			isa = PBXGroup;
 			children = (
+				4740AD57272E6A0700EF5147 /* PageControl */,
 				47056579272BEEBB00174841 /* CollectionViewCell */,
 				47056565272BCC2A00174841 /* TXVoiceRoomGiftPageView.h */,
 				47056566272BCC2A00174841 /* TXVoiceRoomGiftPageView.m */,
@@ -162,6 +166,15 @@
 				470F07D52722AB2E00829BDA /* TipCollectionItemCell.xib */,
 			);
 			path = collectionCell;
+			sourceTree = "<group>";
+		};
+		4740AD57272E6A0700EF5147 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				4740AD59272E6A0700EF5147 /* XHPageControl.h */,
+				4740AD58272E6A0700EF5147 /* XHPageControl.m */,
+			);
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 		474E589727181D3D001C5E82 = {
@@ -398,6 +411,7 @@
 				4787C104271964B700D13E02 /* VoiceRoomMsgCommentCell.m in Sources */,
 				47056570272BE91D00174841 /* TXVoiceRoomGiftUserListView.m in Sources */,
 				474E58B627181D3F001C5E82 /* main.m in Sources */,
+				4740AD5A272E6A0700EF5147 /* XHPageControl.m in Sources */,
 				4787C10D2719687D00D13E02 /* VoiceRoomChatGiftModel.m in Sources */,
 				4787C1102719693E00D13E02 /* VoiceRoomChatMsgModel.m in Sources */,
 				4787C107271967D800D13E02 /* VoiceRoomChatUserModel.m in Sources */,

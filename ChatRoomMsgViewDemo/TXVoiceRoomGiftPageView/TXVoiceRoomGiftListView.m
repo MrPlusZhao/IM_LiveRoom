@@ -17,11 +17,11 @@
 //#define giftListHeight 168
 #define functionButtonWidth 54
 #define powerProgressHeight 25
-#define pageControHeight 50
+#define pageControHeight 25
 
 #define giftListHeight (((SCREEN_WIDTH/5)+30)*2)
 
-@interface TXVoiceRoomGiftListView ()<SPPageMenuDelegate,UIScrollViewDelegate>
+@interface TXVoiceRoomGiftListView ()<SPPageMenuDelegate,UIScrollViewDelegate,TXVoiceRoomGiftBaseListViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, strong) NSMutableArray *childViewsArr;
@@ -31,7 +31,6 @@
 @property (nonatomic, strong) UIView *lineView;
 
 @property (nonatomic, strong) TXVoiceRoomGiftPowerView *powerProgressView;
-
 
 @end
 
@@ -45,7 +44,6 @@
         [self addSubview:self.pageMenu];
         [self addOtherButton];
         [self addSubview:self.powerProgressView];
-        
     }
     return self;
 }
@@ -102,12 +100,7 @@
         for (NSInteger i=0; i<[self randomData]; i++) {
             [arr addObject:[NSString stringWithFormat:@"哈哈%ld",i]];
         }
-        if (i==1) {
-            baseView.backgroundColor = UIColor.systemGreenColor;
-        }
-        if (i==2) {
-            baseView.backgroundColor = UIColor.cyanColor;
-        }
+        baseView.delegate = self;
         baseView.dataArr = arr;
         [self.scrollView addSubview:baseView];
         baseView.frame = CGRectMake(SCREEN_WIDTH*i, 0, SCREEN_WIDTH, giftListHeight+pageControHeight);
@@ -165,13 +158,15 @@
 - (void)pageMenu:(SPPageMenu *)pageMenu functionButtonClicked:(UIButton *)functionButton {
     NSLog(@"functionButtonClicked");
 }
-
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    self.scrollView.scrollEnabled = YES;
+}
 #pragma mark - scrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
-    // 这一步是实现跟踪器时刻跟随scrollView滑动的效果,如果对self.pageMenu.scrollView赋了值，这一步可省
-    // [self.pageMenu moveTrackerFollowScrollView:scrollView];
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    self.scrollView.scrollEnabled = !decelerate;
+}
+- (void)fatherViewCanScroll:(BOOL)canScroll{
+    self.scrollView.scrollEnabled = canScroll;
 }
 - (void)dealloc {
     NSLog(@"被销毁了");
