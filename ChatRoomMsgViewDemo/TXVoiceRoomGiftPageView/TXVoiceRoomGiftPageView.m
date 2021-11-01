@@ -35,7 +35,7 @@
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+        self.backgroundColor = [UIColor colorWithRed:1/255.0 green:4/255.0 blue:28/255.0 alpha:0.7];
         [self addSubview:self.giftListView];
         [self addSubview:self.userListView];
     }

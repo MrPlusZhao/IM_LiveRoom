@@ -13,6 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *giftImageView;
 @property (weak, nonatomic) IBOutlet UILabel *giftNameLab;
 @property (weak, nonatomic) IBOutlet UIImageView *lucyTipImageView;
+@property (weak, nonatomic) IBOutlet UIView *quanBgView;
+@property (weak, nonatomic) IBOutlet UIView *guoBgView;
+@property (weak, nonatomic) IBOutlet UIView *nomarlBgView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *quanBgToTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *guoBgToTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nomarlBgToTop;
 
 @end
 

@@ -131,7 +131,7 @@
         _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,PageMenu_Height+25, SCREEN_WIDTH, giftListHeight+pageControHeight)];
         _scrollView.delegate = self;
         _scrollView.pagingEnabled = YES;
-        _scrollView.bounces = NO;
+//        _scrollView.bounces = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
     }

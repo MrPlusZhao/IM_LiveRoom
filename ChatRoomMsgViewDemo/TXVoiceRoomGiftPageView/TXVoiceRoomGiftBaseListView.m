@@ -101,7 +101,7 @@
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.bounces = NO;
         _collectionView.pagingEnabled = YES;
-        _collectionView.backgroundColor = [UIColor blackColor];
+        _collectionView.backgroundColor = [UIColor clearColor];
     }
     return _collectionView;
 }
