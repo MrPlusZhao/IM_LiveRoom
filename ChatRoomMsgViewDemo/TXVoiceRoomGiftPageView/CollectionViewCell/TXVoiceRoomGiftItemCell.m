@@ -20,9 +20,28 @@
     self.guoBgToTop.constant = 2;
     self.nomarlBgToTop.constant = 2;
     
-    self.quanBgView.hidden = NO;
-//    self.guoBgView.hidden = NO;
-//    self.nomarlBgView.hidden = NO;
-}
+    self.quanBgView.hidden = YES;
+    self.guoBgView.hidden = YES;
+    self.nomarlBgView.hidden = YES;
 
+    self.type = [self randomData];
+    
+    switch (self.type) {
+        case 0:
+            self.nomarlBgView.hidden = NO;
+            break;
+        case 1:
+            self.quanBgView.hidden = NO;
+            break;
+        case 2:
+            self.guoBgView.hidden = NO;
+            break;
+        default:
+            break;
+    }
+}
+- (NSInteger)randomData{
+    NSInteger randomNumber = arc4random()%3;
+    return randomNumber;
+}
 @end

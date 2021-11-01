@@ -9,7 +9,8 @@
 #import "TXVoiceRoomGiftListView.h"
 #import "UIView+Frame.h"
 #import "TXVoiceRoomGiftUserListView.h"
-
+#import "TXVoiceRoomMoneyBlanceView.h"
+#import <Masonry/Masonry.h>
 
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
@@ -20,13 +21,15 @@
 #define ProgressHeight 25
 //#define BOM_HEIGHT 340
 #define BOM_HEIGHT ((UserListViewHeight+PageMenu_Height+giftListHeight+ProgressHeight)+100)
+#define pageControHeight 25
+
 @interface TXVoiceRoomGiftPageView ()
 
 /// 键盘上层遮罩
 @property (nonatomic, strong) UIView *coverView;
 @property (nonatomic, strong) TXVoiceRoomGiftListView *giftListView;
 @property (nonatomic, strong) TXVoiceRoomGiftUserListView *userListView;
-
+@property (nonatomic, strong) TXVoiceRoomMoneyBlanceView *blanceView;
 @end
 
 @implementation TXVoiceRoomGiftPageView
@@ -38,8 +41,17 @@
         self.backgroundColor = [UIColor colorWithRed:1/255.0 green:4/255.0 blue:28/255.0 alpha:0.7];
         [self addSubview:self.giftListView];
         [self addSubview:self.userListView];
+        [self addSubview:self.blanceView];
+        [self configFrame];
     }
     return self;
+}
+- (void)configFrame{
+    [self.blanceView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self);
+        make.height.equalTo(@28);
+        make.top.equalTo(self.giftListView.mas_bottom).offset(pageControHeight);
+    }];
 }
 - (TXVoiceRoomGiftListView *)giftListView{
     if (!_giftListView) {
@@ -54,6 +66,12 @@
         _userListView.frame = CGRectMake(0, 0, SCREEN_WIDTH, UserListViewHeight);
     }
     return _userListView;
+}
+- (TXVoiceRoomMoneyBlanceView *)blanceView{
+    if (!_blanceView) {
+        _blanceView = [[NSBundle mainBundle] loadNibNamed:@"TXVoiceRoomMoneyBlanceView" owner:self options:nil].lastObject;
+    }
+    return _blanceView;
 }
 - (void)show
 {

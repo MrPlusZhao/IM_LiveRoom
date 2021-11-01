@@ -108,7 +108,7 @@
     self.scrollView.contentSize = CGSizeMake(self.dataArr.count*SCREEN_WIDTH, 0);
 }
 - (NSInteger)randomData{
-    NSInteger randomNumber = arc4random()%50+7;
+    NSInteger randomNumber = arc4random()%100+50;
     return randomNumber;
 }
 - (SPPageMenu *)pageMenu{

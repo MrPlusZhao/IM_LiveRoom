@@ -1,0 +1,91 @@
+//
+//  TXVoiceRoomMoneyBlanceView.m
+//  ChatRoomMsgViewDemo
+//
+//  Created by ztp on 2021/11/1.
+//
+
+#import "TXVoiceRoomMoneyBlanceView.h"
+#import <Masonry/Masonry.h>
+
+
+#define RGBAOF(rgbValue, alphas)   [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphas]
+
+#define IPHONE_X \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
+
+#define Height_TabBar ((IPHONE_X == YES) ? 83.0 : 49.0)
+
+#define Height_bottomSafeArea (IPHONE_X == YES ? 34.0 : 0.0)
+
+#define bottomHeight (IPHONE_X == YES ? 34.0 : 0.0)
+
+
+@interface TXVoiceRoomMoneyBlanceView ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+
+@end
+
+@implementation TXVoiceRoomMoneyBlanceView
+
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.moneyBgView.layer.borderColor = RGBAOF(0xffffff, 0.3).CGColor;
+    self.moneyBgView.layer.borderWidth = 0.5;
+    
+    self.numberBgView.layer.borderColor = RGBAOF(0xffffff, 0.3).CGColor;
+    self.numberBgView.layer.borderWidth = 0.5;
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction)];
+    [self.numberBgView addGestureRecognizer:singleTap];
+}
+- (UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.backgroundColor = RGBAOF(0xffffff, 0.3);
+    }
+    return _tableView;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *Cell = [[UITableViewCell alloc] init];
+    Cell.textLabel.text = @"3424234234";
+    return Cell;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 40;
+}
+
+- (void)singleTapAction{
+    [self selectNumberAction];
+}
+- (void)selectNumberAction{
+    
+//    高 40
+//    宽度 140
+    
+    
+//    bom  36 + safebom
+    
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    
+    [keyWindow addSubview:self.tableView];
+    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(keyWindow.mas_right).offset(-10);
+        make.width.equalTo(@140);
+        make.height.equalTo(@400);
+        make.bottom.equalTo(keyWindow.mas_bottom).offset(-bottomHeight-36-10);
+    }];
+    
+}
+@end
