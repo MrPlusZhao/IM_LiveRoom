@@ -31,6 +31,8 @@
 		476EE905272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 476EE904272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.m */; };
 		4778CB53272FC6F3007D0778 /* TXVoiceRoomMoneyBlanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4778CB52272FC6F3007D0778 /* TXVoiceRoomMoneyBlanceView.m */; };
 		4778CB55272FC6FC007D0778 /* TXVoiceRoomMoneyBlanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4778CB54272FC6FC007D0778 /* TXVoiceRoomMoneyBlanceView.xib */; };
+		4778CB5927311744007D0778 /* TXVoiceRoomGiftUserHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4778CB5727311744007D0778 /* TXVoiceRoomGiftUserHeadCell.m */; };
+		4778CB5A27311744007D0778 /* TXVoiceRoomGiftUserHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4778CB5827311744007D0778 /* TXVoiceRoomGiftUserHeadCell.xib */; };
 		4787C104271964B700D13E02 /* VoiceRoomMsgCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4787C103271964B700D13E02 /* VoiceRoomMsgCommentCell.m */; };
 		4787C107271967D800D13E02 /* VoiceRoomChatUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4787C106271967D800D13E02 /* VoiceRoomChatUserModel.m */; };
 		4787C10A2719682400D13E02 /* VoiceRoomChatAttributeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4787C1092719682400D13E02 /* VoiceRoomChatAttributeModel.m */; };
@@ -84,6 +86,9 @@
 		4778CB51272FC6F3007D0778 /* TXVoiceRoomMoneyBlanceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXVoiceRoomMoneyBlanceView.h; sourceTree = "<group>"; };
 		4778CB52272FC6F3007D0778 /* TXVoiceRoomMoneyBlanceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXVoiceRoomMoneyBlanceView.m; sourceTree = "<group>"; };
 		4778CB54272FC6FC007D0778 /* TXVoiceRoomMoneyBlanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TXVoiceRoomMoneyBlanceView.xib; sourceTree = "<group>"; };
+		4778CB5627311744007D0778 /* TXVoiceRoomGiftUserHeadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXVoiceRoomGiftUserHeadCell.h; sourceTree = "<group>"; };
+		4778CB5727311744007D0778 /* TXVoiceRoomGiftUserHeadCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXVoiceRoomGiftUserHeadCell.m; sourceTree = "<group>"; };
+		4778CB5827311744007D0778 /* TXVoiceRoomGiftUserHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TXVoiceRoomGiftUserHeadCell.xib; sourceTree = "<group>"; };
 		4787C102271964B700D13E02 /* VoiceRoomMsgCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceRoomMsgCommentCell.h; sourceTree = "<group>"; };
 		4787C103271964B700D13E02 /* VoiceRoomMsgCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceRoomMsgCommentCell.m; sourceTree = "<group>"; };
 		4787C105271967D800D13E02 /* VoiceRoomChatUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceRoomChatUserModel.h; sourceTree = "<group>"; };
@@ -151,6 +156,9 @@
 				47056576272BEE9F00174841 /* TXVoiceRoomGiftItemCell.xib */,
 				476EE903272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.h */,
 				476EE904272D8151001A9B43 /* TXVoiceRoomGiftFlowLayout.m */,
+				4778CB5627311744007D0778 /* TXVoiceRoomGiftUserHeadCell.h */,
+				4778CB5727311744007D0778 /* TXVoiceRoomGiftUserHeadCell.m */,
+				4778CB5827311744007D0778 /* TXVoiceRoomGiftUserHeadCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -347,6 +355,7 @@
 			files = (
 				47056578272BEE9F00174841 /* TXVoiceRoomGiftItemCell.xib in Resources */,
 				470F07CC27225E5100829BDA /* TIMKeyboardToolBarView.xib in Resources */,
+				4778CB5A27311744007D0778 /* TXVoiceRoomGiftUserHeadCell.xib in Resources */,
 				474E58B327181D3F001C5E82 /* LaunchScreen.storyboard in Resources */,
 				470F07D72722AB2E00829BDA /* TipCollectionItemCell.xib in Resources */,
 				474E58B027181D3F001C5E82 /* Assets.xcassets in Resources */,
@@ -422,6 +431,7 @@
 				47056570272BE91D00174841 /* TXVoiceRoomGiftUserListView.m in Sources */,
 				474E58B627181D3F001C5E82 /* main.m in Sources */,
 				4740AD5A272E6A0700EF5147 /* XHPageControl.m in Sources */,
+				4778CB5927311744007D0778 /* TXVoiceRoomGiftUserHeadCell.m in Sources */,
 				4787C10D2719687D00D13E02 /* VoiceRoomChatGiftModel.m in Sources */,
 				4787C1102719693E00D13E02 /* VoiceRoomChatMsgModel.m in Sources */,
 				4787C107271967D800D13E02 /* VoiceRoomChatUserModel.m in Sources */,
