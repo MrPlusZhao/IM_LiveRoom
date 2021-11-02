@@ -43,7 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = RGBAOF(0x461979, 1.0);
-    [self.view addSubview:self.chatListView];
+//    [self.view addSubview:self.chatListView];
     [self.view addSubview:self.giftPageView];
     [self.giftPageView show];
 }

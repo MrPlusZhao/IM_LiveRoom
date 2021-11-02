@@ -25,10 +25,10 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define bottomHeight (IPHONE_X == YES ? 34.0 : 0.0)
 
 
-@interface TXVoiceRoomMoneyBlanceView ()<UITableViewDelegate,UITableViewDataSource>
+@interface TXVoiceRoomMoneyBlanceView ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-
+@property (nonatomic, strong) UIView *bgView;
 @end
 
 @implementation TXVoiceRoomMoneyBlanceView
@@ -49,13 +49,30 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.backgroundColor = RGBAOF(0xffffff, 0.3);
+        _tableView.scrollEnabled = NO;
+        _tableView.backgroundColor = RGBAOF(0x01041C, 0.9);
+        _tableView.layer.cornerRadius = 10;
     }
     return _tableView;
 }
+- (UIView *)bgView{
+    if (!_bgView) {
+        _bgView = [[UIView alloc]init];
+        _bgView.backgroundColor = UIColor.clearColor;
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissView)];
+        singleTap.delegate = self;
+        [_bgView addGestureRecognizer:singleTap];
+    }
+    return _bgView;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *Cell = [[UITableViewCell alloc] init];
-    Cell.textLabel.text = @"3424234234";
+    Cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    Cell.backgroundColor = UIColor.clearColor;
+    Cell.textLabel.textColor = UIColor.whiteColor;
+    Cell.textLabel.font = [UIFont systemFontOfSize:10];
+    Cell.textLabel.text = @"x888";
     return Cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -64,28 +81,40 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 40;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"选择了数量");
+    [self dismissView];
+}
 - (void)singleTapAction{
     [self selectNumberAction];
 }
 - (void)selectNumberAction{
-    
-//    高 40
-//    宽度 140
-    
-    
-//    bom  36 + safebom
-    
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    
-    [keyWindow addSubview:self.tableView];
-    
+    [keyWindow addSubview:self.bgView];
+    [self.bgView addSubview:self.tableView];
+    [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(keyWindow);
+    }];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(keyWindow.mas_right).offset(-10);
-        make.width.equalTo(@140);
+        make.width.equalTo(@80);
         make.height.equalTo(@400);
-        make.bottom.equalTo(keyWindow.mas_bottom).offset(-bottomHeight-36-10);
+        make.bottom.equalTo(self.mas_bottom).offset(-25-20);
     }];
     
+}
+- (void)dismissView{
+    [self.tableView removeFromSuperview];
+    [self.bgView removeFromSuperview];
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+     // 若为UITableViewCellContentView（即点击了tableViewCell），
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
+    // cell 不需要响应 父视图的手势，保证didselect 可以正常
+        return NO;
+    }
+    //默认都需要响应
+    return  YES;
 }
 @end
