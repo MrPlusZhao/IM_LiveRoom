@@ -13,13 +13,13 @@
 #define RGBAOF(rgbValue, alphas)   [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphas]
 
 
-@interface UserSelectModel : NSObject
+@interface UserModel : NSObject
 
 @property (nonatomic, assign) BOOL isSelect;
 
 @end
 
-@implementation UserSelectModel
+@implementation UserModel
 
 
 @end
@@ -30,7 +30,9 @@
 @property (nonatomic, strong) UICollectionViewFlowLayout *collectionLayout;
 @property (nonatomic, assign) NSInteger lineNum;
 @property (nonatomic, strong) UIButton *allBtn;
-@property (nonatomic, strong) NSMutableArray *selectModelArr;
+@property (nonatomic, strong) NSMutableArray *userModelArr;
+@property (nonatomic, strong) NSMutableArray *selectedDataArr;
+
 @end
 
 @implementation TXVoiceRoomGiftUserListView
@@ -45,16 +47,22 @@
     }
     return self;
 }
-- (NSMutableArray *)selectModelArr{
-    if (!_selectModelArr) {
-        _selectModelArr = [NSMutableArray array];
+- (NSMutableArray *)selectedDataArr{
+    if (!_selectedDataArr) {
+        _selectedDataArr = [NSMutableArray array];
     }
-    return _selectModelArr;
+    return _selectedDataArr;
+}
+- (NSMutableArray *)userModelArr{
+    if (!_userModelArr) {
+        _userModelArr = [NSMutableArray array];
+    }
+    return _userModelArr;
 }
 - (void)configData{
     for (NSInteger i=0; i<10; i++) {
-        UserSelectModel *model = [UserSelectModel new];
-        [self.selectModelArr addObject:model];
+        UserModel *model = [UserModel new];
+        [self.userModelArr addObject:model];
     }
 }
 - (void)createUI{
@@ -91,10 +99,34 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UserModel *model = self.userModelArr[indexPath.row];
+    if (model.isSelect) {//选中的 若存在, 则移出
+        if ([self.selectedDataArr containsObject:model]) {
+            [self.selectedDataArr removeObject:model];
+        }
+    }
+    model.isSelect = !model.isSelect;
+    if (model.isSelect) {
+        [self.selectedDataArr addObject:model];
+    }
+    if (self.selectedDataArr.count == self.userModelArr.count) {
+        // 全麦
+        [self selectAllUser];
+    }
+    else{
+        if (self.allBtn.selected) {
+            self.allBtn.selected = NO;
+            [self changeLineSpace:10];
+        }
+        else{
+            [self.collectionView reloadData];
+        }
+    }
+    
     NSLog(@"点击了第几%ld项目",indexPath.item);
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.selectModelArr.count;
+    return self.userModelArr.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -103,10 +135,19 @@
         cellItem = [[NSBundle mainBundle] loadNibNamed:@"TXVoiceRoomGiftUserHeadCell" owner:self options:nil].lastObject;
     }
 //    cellItem.headImgView.backgroundColor = [self RandomColor];
-    cellItem.headImgView.backgroundColor = UIColor.whiteColor;
-
+    
+    UserModel *model = self.userModelArr[indexPath.row];
+    cellItem.numberlab.text =[NSString stringWithFormat:@"%ld",indexPath.row];
+    if (model.isSelect) {
+        
+        cellItem.headImgView.backgroundColor = UIColor.cyanColor;
+    }
+    else{
+        cellItem.headImgView.backgroundColor = UIColor.whiteColor;
+    }
     return cellItem;
 }
+
 - (UIButton *)allBtn{
     if (!_allBtn) {
         _allBtn = [[UIButton alloc] init];
@@ -122,27 +163,36 @@
 }
 - (void)selectAllUser{
     _allBtn.selected = !_allBtn.selected;
-    if (_allBtn.selected) {
-        _allBtn.backgroundColor = RGBAOF(0xFFE403, 1.0);
-        [_allBtn setTitleColor:RGBAOF(0x6A451A, 1.0) forState:UIControlStateNormal];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.collectionView scrollRectToVisible:CGRectMake(15, 10, SCREEN_WIDTH-75, 32) animated:NO];
-            self.collectionView.scrollEnabled = NO;
-            self.collectionLayout.minimumLineSpacing = -5;
-            [self.collectionView reloadData];
-            [self.collectionView setCollectionViewLayout:self.collectionLayout];
-        });
+    if (_allBtn.selected) { //全麦
+        [self selectAllData:YES];
+        [self changeLineSpace:-10];
     }
-    else{
-        [_allBtn setTitleColor:RGBAOF(0xFFE403, 1.0) forState:UIControlStateNormal];
-        _allBtn.backgroundColor = [UIColor colorWithRed:1/255.0 green:4/255.0 blue:28/255.0 alpha:0.2];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.collectionView.scrollEnabled = YES;
-            self.collectionLayout.minimumLineSpacing = 10;
-            [self.collectionView reloadData];
-            [self.collectionView setCollectionViewLayout:self.collectionLayout];
-        });
+    else{ // 取消全麦
+        [self selectAllData:NO];
+        [self changeLineSpace:10];
     }
 }
-
+- (void)selectAllData:(BOOL)select{
+    for (UserModel *model in self.userModelArr) {
+        model.isSelect = select;
+    }
+}
+- (void)changeLineSpace:(NSInteger)space{
+    if (space > 0) {
+        [_allBtn setTitleColor:RGBAOF(0xFFE403, 1.0) forState:UIControlStateNormal];
+        _allBtn.backgroundColor = [UIColor colorWithRed:1/255.0 green:4/255.0 blue:28/255.0 alpha:0.2];
+    }
+    else{
+        _allBtn.backgroundColor = RGBAOF(0xFFE403, 1.0);
+        [_allBtn setTitleColor:RGBAOF(0x6A451A, 1.0) forState:UIControlStateNormal];
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView scrollRectToVisible:CGRectMake(15, 10, SCREEN_WIDTH-75, 32) animated:NO];
+        self.collectionView.scrollEnabled = space < 0 ? NO : YES;
+        self.collectionLayout.minimumLineSpacing = space;
+        [self.collectionView reloadData];
+        [self.collectionView setCollectionViewLayout:self.collectionLayout];
+    });
+    
+}
 @end

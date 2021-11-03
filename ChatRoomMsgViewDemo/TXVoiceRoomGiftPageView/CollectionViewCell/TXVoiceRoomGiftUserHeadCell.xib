@@ -25,16 +25,25 @@
                             <constraint firstAttribute="width" constant="30" id="f4Z-QL-54d"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xG-p0-B6b">
+                        <rect key="frame" x="20" y="14.5" width="10.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="8xG-p0-B6b" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Dpa-1U-rtA"/>
                 <constraint firstItem="sCe-RH-FeT" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="JgO-De-9k8"/>
+                <constraint firstItem="8xG-p0-B6b" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="NQ9-CR-AY3"/>
                 <constraint firstItem="sCe-RH-FeT" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="brn-Qw-W5y"/>
             </constraints>
             <connections>
                 <outlet property="headImgView" destination="sCe-RH-FeT" id="0gt-ii-2SS"/>
+                <outlet property="numberlab" destination="8xG-p0-B6b" id="HsW-4V-dnT"/>
             </connections>
             <point key="canvasLocation" x="132" y="96"/>
         </collectionViewCell>
